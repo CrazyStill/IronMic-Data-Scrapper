@@ -19,11 +19,11 @@ def read_line_numbers(filename):
     with open(filename, 'r', encoding='utf-8') as lines_file:
         return [int(line.strip()) for line in lines_file]
 
-
-line_numbers_file = 'lines.txt'
+def retrive_data_start():
+    line_numbers_file = 'lines.txt'
 
 # Read line numbers from the file
-html_line_numbers = read_line_numbers(line_numbers_file)
+    html_line_numbers = read_line_numbers(line_numbers_file)
 
 # Call the function 
-retrieve_html_lines(html_line_numbers)
+    retrieve_html_lines(html_line_numbers)

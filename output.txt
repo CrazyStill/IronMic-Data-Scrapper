@@ -1,0 +1,14 @@
+Line 2236: <td>LAX_551_CTR, <span class="online">LAX_55_CTR</span></td>
+Line 2237: <td sorttable_customkey="49044">13:37</td>
+Line 3321: <td>PDX_1_TWR, PDX_S_TWR, PDX_TWR</td>
+Line 3322: <td sorttable_customkey="152811">42:26</td>
+Line 3336: <td>PDX_GND</td>
+Line 3337: <td sorttable_customkey="32103">08:55</td>
+Line 3586: <td><span class="online">SAN_1_GND</span>, SAN_GND</td>
+Line 3587: <td sorttable_customkey="162116">45:01</td>
+Line 3591: <td>SAN_1_TWR, SAN_2_TWR, <span class="online">SAN_TWR</span></td>
+Line 3592: <td sorttable_customkey="73388">20:23</td>
+Line 3681: <td><span class="online">SCT_APP</span></td>
+Line 3682: <td sorttable_customkey="35658">09:54</td>
+Line 3706: <td>SEA_02_CTR, SEA_06_CTR, SEA_16_CTR, SEA_1_CTR, SEA_32_CTR, SEA_CTR</td>
+Line 3707: <td sorttable_customkey="38843">10:47</td>
