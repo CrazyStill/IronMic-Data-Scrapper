@@ -12,7 +12,7 @@ def search_file(search_query):
 
 
 def main():
-    search_terms = ['SAN_TWR', 'SAN_GND', 'LAX_55_CTR', 'SCT_APP', 'PDX_TWR', 'PDX_GND', 'SEA_16_CTR']
+    search_terms = ['SAN_TWR', 'SAN_GND', 'LAX_55_CTR', 'SCT_APP', 'PDX_TWR', 'PDX_GND', 'SEA_16_CTR', 'LAX_E_TWR']
     found_lines = search_file(search_terms)
 
     with open('lines.txt', 'w') as output_file:
