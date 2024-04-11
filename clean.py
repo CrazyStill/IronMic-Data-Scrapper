@@ -1,14 +1,5 @@
 import re
 
-def remove_duplicates(lines):
-    unique_lines = []
-    previous_line = None
-    for line in lines:
-        if line != previous_line:
-            unique_lines.append(line)
-        previous_line = line
-    return unique_lines
-
 def extract_info_after_colon(line):
     colon_index = line.find(':')
     if colon_index != -1:
@@ -18,14 +9,21 @@ def extract_info_after_colon(line):
 
 def clean_lines(html_lines):
     cleaned_lines = []
+    previous_line = None
     for line in html_lines:
         clean_line = re.sub(r'<[^>]*>', '', line)
         clean_line = re.sub(r',\s*', ' ', clean_line)
         clean_line = re.sub(r'_\d+', '', clean_line)
         clean_line = re.sub(r'_', ' ', clean_line)
-        cleaned_lines.append(clean_line.strip())
+        
+        # Restrict names to 7 characters and remove consecutive duplicates
+        if clean_line != previous_line:
+            words = clean_line.split()
+            restricted_words = [word[:7] for word in words]
+            clean_line = ' '.join(restricted_words)
+            cleaned_lines.append(clean_line.strip())
+            previous_line = clean_line
 
-    cleaned_lines = remove_duplicates(cleaned_lines)
     cleaned_lines = [extract_info_after_colon(line) for line in cleaned_lines]
     
     return cleaned_lines
@@ -34,8 +32,11 @@ def main():
     with open("output.txt", "r") as file:
         html_lines = file.readlines()
         cleaned_lines = clean_lines(html_lines)
-        for line in cleaned_lines:
-            print(line)
+        
+        # Write cleaned output to clean.txt
+        with open("clean.txt", "w") as clean_file:
+            for line in cleaned_lines:
+                clean_file.write(line + "\n")
 
 if __name__ == "__main__":
     main()
