@@ -14,7 +14,11 @@ def clean_lines(html_lines):
         clean_line = re.sub(r'<[^>]*>', '', line)
         clean_line = re.sub(r',\s*', ' ', clean_line)
         clean_line = re.sub(r'_\d+', '', clean_line)
+        # Remove letters and numbers between double underscores and then remove underscores
+        clean_line = re.sub(r'_\w+_', ' ', clean_line)
         clean_line = re.sub(r'_', ' ', clean_line)
+        
+        
         
         # Restrict names to 7 characters and remove consecutive duplicates
         if clean_line != previous_line:
