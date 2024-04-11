@@ -1,10 +1,20 @@
 import Scrapper
 import Search
+import Lines
+import clean
+import re
+from bs4 import BeautifulSoup
 
-def Main():
+def grab():
+    Lines.main()
     Scrapper.scrape_html_content()
-    Search.retrieve_html_lines()
+    Search.retrive_data_start()
     
-    print()
+    
+def display():
+    clean.main()
 
-Main()
+
+
+grab()
+display()
