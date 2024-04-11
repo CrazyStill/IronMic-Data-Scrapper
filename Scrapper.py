@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def scrape_html_content():
     # URL of the website to scrape
-    url = 'https://statsim.net/atc/combinedtime/'
+    url = 'https://statsim.net/atc/combinedtime/?period=thismonth'
 
     # Send a GET request to the URL
     response = requests.get(url)
