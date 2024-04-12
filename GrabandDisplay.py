@@ -41,6 +41,7 @@ def display():
         for row, (airport_code, time) in enumerate(data_array, start=1):
             sheet.write(row, 0, airport_code)
             sheet.write(row, 1, time)
+            print(airport_code , time)
 
         # Save the workbook
         workbook.save('timedata.xls')
